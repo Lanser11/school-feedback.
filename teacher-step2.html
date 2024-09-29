@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Feedback - Step 1</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Teacher Feedback Form - Step 1</h1>
-        <form id="step1">
-            <!-- Teacher's Name -->
-            <label for="teacher-name">Name:</label>
-            <input type="text" id="teacher-name" placeholder="Enter your name" required>
 
-            <!-- Password -->
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Enter your password" required>
-
-            <!-- Next Button -->
-            <button type="button" onclick="goToStep2()">Next</button>
-        </form>
-    </div>
-
-    <script>
-        function goToStep2() {
-            // Get values from step 1
-            const teacherName = document.getElementById('teacher-name').value;
-            const password = document.getElementById('password').value;
-
-            // Validate the form
-            if (teacherName && password) {
-                // Store the values in sessionStorage
-                sessionStorage.setItem('teacher-name', teacherName);
-                sessionStorage.setItem('password', password);
-
-                // Redirect to step 2 (next page)
-                window.location.href = 'teacher-step2.html';
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        }
-    </script>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>

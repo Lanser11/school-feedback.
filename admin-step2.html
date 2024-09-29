@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Feedback - Step 1</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Admin Feedback Form - Step 1</h1>
-        <form id="step1">
-            <!-- Username -->
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Enter your username" required>
 
-            <!-- Password -->
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Enter your password" required>
-
-            <!-- Next Button -->
-            <button type="button" onclick="goToStep2()">Next</button>
-        </form>
-    </div>
-
-    <script>
-        function goToStep2() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (username && password) {
-                sessionStorage.setItem('username', username);
-                sessionStorage.setItem('password', password);
-                window.location.href = 'admin-step2.html';
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        }
-    </script>
-</body>
-</html>
 
 <!DOCTYPE html>
 <html lang="en">
