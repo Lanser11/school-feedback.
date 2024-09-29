@@ -3,21 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Feedback</title>
+    <title>Admin Feedback - Step 1</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Admin Feedback Form</h1>
-        <form>
-            <!-- Admin Name -->
-            <label for="admin-name">Name:</label>
-            <input type="text" id="admin-name" placeholder="Enter your name" required>
-
-            <!-- Department -->
-            <label for="department">Department:</label>
-            <input type="text" id="department" placeholder="Enter department" required>
-
+        <h1>Admin Feedback Form - Step 1</h1>
+        <form id="step1">
             <!-- Username -->
             <label for="username">Username:</label>
             <input type="text" id="username" placeholder="Enter your username" required>
@@ -26,13 +18,81 @@
             <label for="password">Password:</label>
             <input type="password" id="password" placeholder="Enter your password" required>
 
+            <!-- Next Button -->
+            <button type="button" onclick="goToStep2()">Next</button>
+        </form>
+    </div>
+
+    <script>
+        function goToStep2() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                sessionStorage.setItem('username', username);
+                sessionStorage.setItem('password', password);
+                window.location.href = 'admin-step2.html';
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Feedback - Step 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Feedback Form - Step 2</h1>
+        <form id="step2">
+            <!-- Name -->
+            <label for="admin-name">Name:</label>
+            <input type="text" id="admin-name" placeholder="Enter your name" required>
+
+            <!-- Department -->
+            <label for="department">Department:</label>
+            <input type="text" id="department" placeholder="Enter department" required>
+
             <!-- Feedback -->
             <label for="feedback">Feedback:</label>
             <textarea id="feedback" rows="4" placeholder="Your feedback" required></textarea>
 
             <!-- Submit Button -->
-            <button type="submit">Submit</button>
+            <button type="submit" onclick="submitForm()">Submit</button>
         </form>
     </div>
+
+    <script>
+        function submitForm() {
+            const adminName = document.getElementById('admin-name').value;
+            const department = document.getElementById('department').value;
+            const feedback = document.getElementById('feedback').value;
+
+            const username = sessionStorage.getItem('username');
+            const password = sessionStorage.getItem('password');
+
+            if (adminName && department && feedback) {
+                console.log({
+                    username,
+                    password,
+                    adminName,
+                    department,
+                    feedback
+                });
+
+                alert("Feedback Submitted Successfully!");
+                sessionStorage.clear();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+    </script>
 </body>
 </html>
