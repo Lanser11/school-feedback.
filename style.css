@@ -2,8 +2,9 @@
 body {
     font-family: 'Poppins', Arial, sans-serif;
     background-color: #f0f8ff;
-    background-image: url('background.jpg'); /* Add a playful background image */
-    background-size: cover;
+    background-image: url('/mnt/data/school.jpg'), linear-gradient(135deg, #ff9ff3, #48dbfb, #00d2d3);
+    background-size: cover, cover; /* Ensure both the image and gradient cover the page */
+    background-blend-mode: overlay; /* Blend the image with the gradient */
     background-position: center;
     color: #333;
     height: 100vh;
