@@ -1,22 +1,22 @@
-/* General Body Styling */
+/* General Body Styling with background from first code */
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    background-color: #f0f8ff;
-    background-image: url('/mnt/data/school.jpg'), linear-gradient(135deg, #ff9ff3, #48dbfb, #00d2d3);
-    background-size: cover, cover; /* Ensure both the image and gradient cover the page */
-    background-blend-mode: overlay; /* Blend the image with the gradient */
-    background-position: center;
+    background: url(http://cdn.magdeleine.co/wp-content/uploads/2014/05/3jPYgeVCTWCMqjtb7Dqi_IMG_8251-1400x933.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
     color: #333;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Add slow-motion animation with shapes */
+/* Slow-motion gradient animation from the second code */
 body::before {
     content: '';
     position: absolute;
@@ -36,7 +36,7 @@ body::before {
     100% { background-position: 100% 50%; }
 }
 
-/* Container styling */
+/* Container styling from second code */
 .container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
@@ -46,6 +46,7 @@ body::before {
     width: 100%;
     text-align: center;
     backdrop-filter: blur(8px);
+    z-index: 2; /* Ensure it stays above the gradient */
 }
 
 /* Header Styling */
@@ -56,7 +57,7 @@ h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Labels and Form */
+/* Labels and Form Styling */
 label {
     display: block;
     margin-top: 10px;
@@ -128,4 +129,153 @@ button:hover {
     right: -60px;
     background-color: #74b9ff;
     animation-duration: 12s;
+}
+
+/* Styles for login button from the first code */
+#login-button {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(3,3,3,.8);
+    overflow: hidden;
+    opacity: 0.4;
+    box-shadow: 10px 10px 30px #000;
+}
+
+/* Login container from first code */
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 260px;
+    height: 260px;
+    border-radius: 5px;
+    background: rgba(3,3,3,0.25);
+    box-shadow: 1px 1px 50px #000;
+    display: none;
+}
+
+/* Close button for the container */
+.close-btn {
+    position: absolute;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    line-height: 18px;
+    top: 3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    opacity: .2;
+    transition: all 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    opacity: .5;
+}
+
+/* Inputs, placeholders, and link from first code */
+a,
+input {
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+    width: 80%;
+    display: block;
+    margin: 9px auto;
+    font-size: 17px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(3,3,3,.1);
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 3px 3px 10px #333;
+    background: rgba(3,3,3,.18);
+}
+
+/* Placeholders */
+::-webkit-input-placeholder {
+   color: #ddd;  
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: red;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;  
+}
+:-ms-input-placeholder {  
+   color: #333;  
+}
+
+/* Checkbox and Remember Me styles */
+#remember-container {
+    position: relative;
+    margin: -5px 20px;
+}
+
+.checkbox {
+    position: relative;
+    cursor: pointer;
+    -webkit-appearance: none;
+    padding: 5px;
+    border-radius: 4px;
+    background: rgba(3,3,3,.2);
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+}
+
+.checkbox:checked {
+    background: rgba(3,3,3,.4);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.5);
+    color: #fff;
+}
+
+.checkbox:checked:after {
+    content: '\2714';
+    font-size: 10px;
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    color: #fff;
+}
+
+#remember {
+    position: absolute;
+    font-size: 13px;
+    font-family: 'Hind', sans-serif;
+    color: rgba(255,255,255,.5);
+    top: 7px;
+    left: 20px;
+}
+
+#forgotten {
+    position: absolute;
+    font-size: 12px;
+    font-family: 'Hind', sans-serif;
+    color: rgba(255,255,255,.2);
+    right: 0px;
+    top: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#forgotten:hover {
+    color: rgba(255,255,255,.6);
 }
